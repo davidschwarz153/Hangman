@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galgenmännchen - Hangman Game</title>
+    <script type="module" src="./app.ts"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body{
+            background-image: url(./assets/Pw8y.gif);
+            background-repeat: no-repeat;
+            background-size:cover;
+
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-dvh ">
+    <main class="shadow-xl bg-black/[.2] font-sans flex flex-col items-center justify-center h-[90vh] w-[40vw] rounded-[100px] m-20 p-20">
+
+    
+    <section class= "mb-10">
+        <svg id="hangman" class=" w-[24vw] h-[24vh] mt-[6vh]" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <g id="gallows">
+                <!-- Gallows structure -->
+                <line x1="10" y1="110" x2="50" y2="110" stroke="whitesmoke" stroke-width="2"/>
+                <line x1="30" y1="10" x2="30" y2="110" stroke="whitesmoke" stroke-width="2"/>
+                <line x1="30" y1="10" x2="70" y2="10" stroke="whitesmoke" stroke-width="2"/>
+                <line x1="70" y1="10" x2="70" y2="30" stroke="whitesmoke" stroke-width="2"/>
+            </g>
+            <g id="hangman-figure">
+                <!-- Hangman body parts (invisible initially) -->
+                <circle id="head" cx="70" cy="40" r="10" stroke="whitesmoke" stroke-width="2" fill="none" visibility="hidden"/>
+                <line id="body" x1="70" y1="50" x2="70" y2="70" stroke="whitesmoke" stroke-width="2" visibility="hidden"/>
+                <line id="left-arm" x1="70" y1="60" x2="50" y2="50" stroke="whitesmoke" stroke-width="2" visibility="hidden"/>
+                <line id="right-arm" x1="70" y1="60" x2="90" y2="50" stroke="whitesmoke" stroke-width="2" visibility="hidden"/>
+                <line id="left-leg" x1="70" y1="70" x2="50" y2="90" stroke="whitesmoke" stroke-width="2" visibility="hidden"/>
+                <line id="right-leg" x1="70" y1="70" x2="90" y2="90" stroke="whitesmoke" stroke-width="2" visibility="hidden"/>
+            </g>
+        </svg>
+    </section>
+    
+    <div class="text-center">
+        
+        <div class="text-4xl text-gray-200 mb-[2vh]">
+            <p><span id="word-display">_ _ _ _ _</span></p>
+        </div>
+        <div class="mb-[2vh] text-white"  >
+            <p><span id="wrong-guesses">0</span>/6</p>
+        </div>
+        <div id="alphabet" class="grid grid-cols-7 gap-2 mb-[6vh] mt-[5vh]">
+            <!-- Dynamically created alphabet buttons will go here -->
+        </div>
+        <div>
+            <button id="start-game-btn"  class="px-4 py-2 bg-orange-500/[.8] text-white rounded-[60px] shadow-xl">Start New Game</button>
+        </div>
+    </div>
+
+
+</main>
+</body>
+</html>
